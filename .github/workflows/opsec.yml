@@ -1,0 +1,15 @@
+name: mcp-adapter OPSEC
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  opsec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: OPSEC scan (R14 — founder identity must not leak)
+        run: bash ./scripts/opsec-scan.sh "$PWD"
