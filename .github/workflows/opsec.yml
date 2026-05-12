@@ -10,6 +10,6 @@ jobs:
   opsec:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: OPSEC scan (R14 — founder identity must not leak)
         run: bash ./scripts/opsec-scan.sh "$PWD"
